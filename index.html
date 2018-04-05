@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Groceries</title>
+  <link href="src/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
   <link href="style.css" rel="stylesheet" media="all">
 </head>
 
 <body>
-  <div class="row">
+  <div class="container card">
     <h1>Grocery List</h1>
-
+    <div >
+      <button id=getList type="button" class="btn btn-primary">Get Grocery List</button>
+      <button id="deleteItem" type="button" class="btn btn-danger">Delete Item</button>
+    </div>
+    <hr>
     <div id="main">
     </div>
   </div>
@@ -16,4 +24,5 @@
   <script src="src/GroceryItem.js"></script>
   <script src="src/main.js"></script>
 </body>
+
 </html>
