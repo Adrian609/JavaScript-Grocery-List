@@ -1,6 +1,6 @@
 // Meets Expectations
 document.getElementById("getList").addEventListener('click', onClick);
-document.getElementById("deleteItem").addEventListener('click', deleteItem);
+document.getElementById("deleteItem").addEventListener('click', selectedItemForDeletion);
 
 // In `main.js` write code to create four different `
 // GroceryItems` and store those `GroceryItems` objects in an **array** called `groceryList`.
@@ -12,34 +12,37 @@ var groceryList = [
 ];
 // In `main.js` create a `summary` function that takes 1 argument, an array of `GroceryItems`. 
 // When you call `summary(groceryList);` your function should 
-function onClickSelectedItem() {
-  document.getSelection().addEventListener('click', selectedItem)
-}
+
 function onClick() {
   summary(groceryList);
 }
-function selectedItem() {
-  var x = document.getSelection("");
-  alert(x);
-  console.log(x)
+function selectedItemForDeletion() {
+  var x = document.getElementById("mySelect").selectedIndex;
+  console.log(x);
+  groceryList.splice(x, 1);
+  console.log(x);
+  console.log(groceryList);
+  summary(groceryList);
 }
+
 function summary(arr) {
-  var output = `<p><pre>Inventory:</pre></p><ul id="mySelect">`;
-  var objCopy = { arr };
-  console.log(objCopy);
-  for (var i = 0; i < arr.length; i++) {
-    var obj = arr[i];
-    output += `<li data-toggle="list" class="list-group-item deleteItem">${i + 1 + " - " + Object.values(obj)}</li>`;
-    console.log(arr[i]);
+  if (arr === 0) {
+    var output = 0;
+    console.log(output);
+    document.getElementById("main").innerHTML = output;
+  } else {
+    var output = `<p><pre>Inventory:</pre></p><select id="mySelect">`;
+    var objCopy = { arr };
+    console.log(objCopy);
+    for (var i = 0; i < arr.length; i++) {
+      var obj = arr[i];
+      output += `<option class="list-group-item">${i + 1 + " - " + Object.values(obj)}</option>`;
+      console.log(arr[i]);
+    }
   }
-  output += `<ul>`;
+  output += `<select>`;
   console.log(output);
   document.getElementById("main").innerHTML = output;
-}
-function deleteItem(summaryList) {
-
-
-  summaryList.splice();
 }
 
 // Exceeds Expectations
