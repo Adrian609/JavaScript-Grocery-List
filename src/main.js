@@ -17,15 +17,14 @@ var groceryList = [
 function onClick() {
   summary(groceryList);
 }
-function addItem() {
-  //e.preventDefault();
+function addItem(e) {
+  e.preventDefault();
   let item = document.getElementById('item').value;
   let price = document.getElementById('price').value;
   let quantity = document.getElementById('quantity').value;
   console.log(item, price, quantity);
   groceryList.push(new GroceryItem(item, price, quantity));
-
-  //summary(groceryList);
+  summary(groceryList);
 }
 function selectedItemForDeletion() {
   var x = document.getElementById("mySelect").selectedIndex;

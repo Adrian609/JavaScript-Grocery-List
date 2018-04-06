@@ -6,7 +6,7 @@
 class GroceryItem {
     constructor(name, price, quantity) {
         this.name = name;
-        this.price = " Price: $ " + price.toFixed(2);
+        this.price = " Price: $ " + price;
         this.quantity = " Quantity: # " + quantity;
     }
 }
