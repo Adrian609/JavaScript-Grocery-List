@@ -1,6 +1,7 @@
 // Meets Expectations
 document.getElementById("getList").addEventListener('click', onClick);
 document.getElementById("deleteItem").addEventListener('click', selectedItemForDeletion);
+document.getElementById("addItem").addEventListener('click', addItem);
 
 // In `main.js` write code to create four different `
 // GroceryItems` and store those `GroceryItems` objects in an **array** called `groceryList`.
@@ -15,6 +16,16 @@ var groceryList = [
 
 function onClick() {
   summary(groceryList);
+}
+function addItem() {
+  //e.preventDefault();
+  let item = document.getElementById('item').value;
+  let price = document.getElementById('price').value;
+  let quantity = document.getElementById('quantity').value;
+  console.log(item, price, quantity);
+  groceryList.push(new GroceryItem(item, price, quantity));
+
+  //summary(groceryList);
 }
 function selectedItemForDeletion() {
   var x = document.getElementById("mySelect").selectedIndex;
